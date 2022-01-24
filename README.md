@@ -1,2 +1,2 @@
 # HWID
-Simple system d'HWID à partir du Serial Number
+Simple HWID system with disk serial number
