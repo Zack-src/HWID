@@ -6,7 +6,6 @@ int main()
 {
 
     DWORD disk_serialINT;
-    
     GetVolumeInformationA("c:\\", NULL, NULL, &disk_serialINT, NULL, NULL, NULL, NULL);
 
     std::stringstream ss;
