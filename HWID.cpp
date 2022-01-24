@@ -1,14 +1,18 @@
 #include <Windows.h>
 #include <iostream>
-#include <stdio.h>
+#include <sstream>
 
-int main() {
+int main()
+{
 
-	DWORD VolumeSerialNumber = 0;
-	GetVolumeInformationA("c:\\", NULL, NULL, &VolumeSerialNumber, NULL, NULL, NULL, NULL);
+    DWORD disk_serialINT;
+    
+    GetVolumeInformationA("c:\\", NULL, NULL, &disk_serialINT, NULL, NULL, NULL, NULL);
 
-	char buffer[8];
-	sprintf(buffer, (char*)"%x ", VolumeSerialNumber);
+    std::stringstream ss;
+    ss << std::hex << disk_serialINT;
+    
+    std::cout << ss.str();
 
 	return 0;
 }
